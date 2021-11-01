@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/app.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- UC1 - Employee Payroll Form with Logo -->
+    <header class="header-content header">
+        <div class="logo-content">
+            <img src="./assets/images/logo.png" alt="">
+            <div>
+                <span class="emp-text">EMPLOYEE</span><br>
+                <span class="emp-text emp-payroll">PAYROLL</span>
+            </div>
+        </div>
+    </header>
+    <!-- UC2 - Employee Payroll Form with Header and Name -->
+    <div id="formId" class="form-content">
+        <form class="form" id="form" method="post" onsubmit="Save(event)" onreset="resetForm()">
+            <div class="form-head">Employee Payroll Form</div>
+            <div class="row-content">
+                <label class="label text" for="name">Name</label>
+                <input class="input" type="text" id="name" name="name" placeholder="Your name.." required>
+                <error-output class="name-error" for="name"></error-output>
+            </div>
+            <!-- UC3 - Specify Profile Pic to the Employee Payroll App -->
+            <div class="row-content">
+                <div class="profile-radio-content">
+                    <label class="label text" for="profile">Profile Image</label>
+                    <label>
+                        <input type="radio" id="profile1" name="profile" value="./assets/profile-images/Ellipse -1.png"
+                            required>
+                        <img class="profile" id="image1" src="./assets/profile-images/Ellipse -1.png">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile2" name="profile" value="./assets/profile-images/Ellipse -2.png"
+                            required>
+                        <img class="profile" id="image2" src="./assets/profile-images/Ellipse -2.png">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile3" name="profile" value="./assets/profile-images/Ellipse -3.png"
+                            required>
+                        <img class="profile" id="image3" src="./assets/profile-images/Ellipse -3.png">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile4" name="profile" value="./assets/profile-images/Ellipse -4.png"
+                            required>
+                        <img class="profile" id="image4" src="./assets/profile-images/Ellipse -4.png">
+                    </label>
+                </div>
+            </div>
+            <!-- UC4 - Specify gender, department and salary with radio button, checkbox and range respectively -->
+            <div class="row-content">
+                <label class="label text" for="gender">Gender</label>
+                <div>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label class="text" for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label class="text" for="female">Female</label>
+                </div>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="department">Department</label>
+                <div>
+                    <input type="checkbox" id="hr" name="department" value="HR">
+                    <label class="text" for="hr">HR</label>
+                    <input type="checkbox" id="sales" name="department" value="Sales">
+                    <label class="text" for="sales">Sales</label>
+                    <input type="checkbox" id="finance" name="department" value="Finance">
+                    <label class="text" for="finance">Finance</label>
+                    <input type="checkbox" id="engineer" name="department" value="Engineer">
+                    <label class="text" for="engineer">Engineer</label>
+                    <input type="checkbox" id="others" name="department" value="Others">
+                    <label class="text" for="others">Others</label>
+                </div>
+            </div>
+            <div>
+                <label class="lebel text" for="salary">Choose your Salary</label>
+                <input class="input" type="range" name="salary" id="salary" min="30000" max="50000" step="100"
+                    value="40000">
+                <output class="salary-output text" for="salary">40000</output>
+            </div>
+            <div class="date">
+                <label class="lable text" for="startDate">Start Date</label>
+                <select name="day" id="day" onclick="Days()"></select>
+                <select name="months" id="months" onclick="Months()"></select>
+                <select name="years" id="years" onclick="Years()"></select>
+            </div>
+            <!-- UC6 - Ability to add note and button -->
+            <div class="row-content">
+                <label class="label text" for="note">Note</label>
+                <textarea id="note" class="input" name="note" placeholder="" style="
+                height:100px"></textarea>
+            </div>
+            <div class="buttonParent">
+                <button type="cancle" class="resetButton button cancelButton">Cancel</button>
+                <!-- <a href="./home.html" class="resetButton button cancelButton">Cancel</a>  -->
+                <div class="submit-reset">
+                    <button type="submit" class="button submitButton" id="submitButton">Submit</button>
+                    <button type="reset" class="resetButton button">Reset</button>
+                </div>
+            </div>
+        </form>
+</body>
+
+</html>
